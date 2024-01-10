@@ -30,7 +30,7 @@ body {
   transition: 0.1s;
 }
 .banner .bg:nth-child(1) {
-  background-image: url(images/banner_0.png);
+  background-image: url(images/banner_0.jpg);
 }
 .banner .bg:nth-child(2) {
   background-image: url(images/banner_1.png);
