@@ -54,7 +54,7 @@ window.addEventListener(
           console.log(tab);
           content.animate(
             {
-              transform: `translateY(${-transformContent + 100 * index}px)`,
+              transform: `translateY(${-transformContent + 0 * index}px)`,
             },
             { duration: 500, fill: "forwards" }
           );
