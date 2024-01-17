@@ -10,7 +10,7 @@ window.addEventListener(
   "wheel",
   function (event) {
     event.preventDefault();
-    const scrollSpeed = 0.25;
+    const scrollSpeed = 0.5;
     const scrollValue = window.scrollY + (event.deltaY / 3) * scrollSpeed;
     window.scrollTo(0, scrollValue);
 
@@ -40,21 +40,30 @@ window.addEventListener(
             {
               height: `${setHeight + 100}px`,
             },
-            { duration: 50, fill: "forwards" }
+            { duration: 500, fill: "forwards" }
           );
           topBefore = window.scrollY;
         }
       }
       tabs.forEach((tab, index) => {
-        // console.log(tab.offsetTop - top, window.innerHeight);
-        if (tab.offsetTop - top <= window.innerHeight * (index + 1)) {
+        let tabRect = tab.getBoundingClientRect();
+        let tabTop = tabRect.top;
+        let tabBottom = tabRect.bottom;
+
+        if (tabBottom <= window.innerHeight && tabBottom >= 0) {
           let content = tab.getElementsByClassName("content")[0];
-          let transformContent =
-            window.innerHeight * (index + 1) - (tab.offsetTop - top);
-          console.log(tab);
+          let transformContent = 1;
+
+          // Calculate the translation amount based on the tab's position
+          if (tabTop < 0) {
+            transformContent = window.innerHeight - tabBottom;
+          } else if (tabBottom > window.innerHeight) {
+            transformContent = window.innerHeight - tabBottom;
+          }
+
           content.animate(
             {
-              transform: `translateY(${-transformContent + 0 * index}px)`,
+              transform: `translateY(${transformContent}px)`,
             },
             { duration: 500, fill: "forwards" }
           );

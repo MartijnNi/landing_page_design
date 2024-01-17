@@ -99,7 +99,7 @@ body {
 /* chapter 1 */
 .tab.tab2 {
   background: linear-gradient(to top, #010302 0%, transparent 20%, #010302 80%),
-    url(images/Wolf\ and\ the\ man.jpg);
+    url(images/Wolfman.jpg);
   background-size: 100%;
 }
 .tab.tab2 .content {
@@ -119,7 +119,7 @@ body {
 /* chapter 2 */
 .tab.tab3 {
   background: linear-gradient(to top, #010302 0%, transparent 20%, #010302 80%),
-    url(images/Wolf\ and\ the\ man.jpg);
+    url(images/Wolfman.jpg);
   background-size: 100%;
 }
 
